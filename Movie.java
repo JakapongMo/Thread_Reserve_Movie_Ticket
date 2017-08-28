@@ -76,7 +76,7 @@ public class Movie {
 						 		System.out.println(format.format(new Date()) +" : "+ "User_1 Buy Movie : "+ selected_movie +"    ||Seat : "+ selected_ticket + "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 	}
 						 }else {
-							 System.out.println(format.format(new Date()) +" : "+"User_1 Canot Lock Movie : "+ selected_movie);
+							 System.out.println(format.format(new Date()) +" : "+"User_1 Can't Lock Movie : "+ selected_movie+ "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 }
 					 }
 				 }
@@ -103,7 +103,7 @@ public class Movie {
 						 		System.out.println(format.format(new Date()) +" : "+ "User_2 Buy Movie : "+ selected_movie +"    ||Seat : "+ selected_ticket + "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 	}
 						 }else {
-							 System.out.println(format.format(new Date()) +" : "+"User_2 Canot Lock Movie : "+ selected_movie);
+							 System.out.println(format.format(new Date()) +" : "+"User_2 Can't Lock Movie : "+ selected_movie+ "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 }
 					 }
 				 }
@@ -131,7 +131,7 @@ public class Movie {
 						 		System.out.println(format.format(new Date()) +" : "+ "User_3 Buy Movie : "+ selected_movie +"    ||Seat : "+ selected_ticket + "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 	}
 						 }else {
-							 System.out.println(format.format(new Date()) +" : "+"User_3 Canot Lock Movie : "+ selected_movie);
+							 System.out.println(format.format(new Date()) +" : "+"User_3 Can't Lock Movie : "+ selected_movie+ "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 }
 					 }
 				 }
@@ -159,7 +159,7 @@ public class Movie {
 						 		System.out.println(format.format(new Date()) +" : "+ "User_4 Buy Movie : "+ selected_movie +"    ||Seat : "+ selected_ticket + "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 	}
 						 }else {
-							 System.out.println(format.format(new Date()) +" : "+"User_4 Canot Lock Movie : "+ selected_movie);
+							 System.out.println(format.format(new Date()) +" : "+"User_4 Can't Lock Movie : "+ selected_movie+ "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 }
 					 }
 				 }
@@ -187,7 +187,7 @@ public class Movie {
 						 		System.out.println(format.format(new Date()) +" : "+ "User_5 Buy Movie : "+ selected_movie +"    ||Seat : "+ selected_ticket + "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 	}
 						 }else {
-							 System.out.println(format.format(new Date()) +" : "+"User_5 Canot Lock Movie : "+ selected_movie);
+							 System.out.println(format.format(new Date()) +" : "+"User_5 Can't Lock Movie : "+ selected_movie+ "  ||Movie"+ selected_movie+ " Remain : "+ m.Get_remain(selected_ticket, selected_movie));
 						 }
 					 }
 				 }
