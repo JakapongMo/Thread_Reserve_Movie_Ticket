@@ -51,14 +51,18 @@ public class Movie {
 			Movie m = new Movie();
 			Random rn = new Random();
 			
+			//Tuning time decision here (milisec)
+			int Max_time_decision = 30000;
+			int Min_time_decision = 1000;
+			
 			Thread t1 = new Thread(){
 				 public void run(){
-					 for(int i=1;i<5;i++){  
+					 for(;;){  
 						 int first_dicision = rn.nextInt(1000) + 500;
 						 try{Thread.sleep(first_dicision);}catch(InterruptedException e){System.out.println(e);}  
 						 int selected_movie = rn.nextInt(5) + 1;
 						 int selected_ticket = rn.nextInt(5) + 1;
-						 int selected_time = rn.nextInt(30000) + 1000;
+						 int selected_time = rn.nextInt(Max_time_decision) + Min_time_decision;
 						 int decision = rn.nextInt(1) + 0;
 						
 						 m.Lock(selected_ticket, selected_movie);
@@ -76,12 +80,12 @@ public class Movie {
 			};
 			Thread t2 = new Thread(){
 				 public void run(){
-					 for(int i=1;i<5;i++){  
+					 for(;;){  
 						 int first_dicision = rn.nextInt(1000) + 500;
 						 try{Thread.sleep(first_dicision);}catch(InterruptedException e){System.out.println(e);}    
 						 int selected_movie = rn.nextInt(5) + 1;
 						 int selected_ticket = rn.nextInt(5) + 1;
-						 int selected_time = rn.nextInt(30000) + 1000;
+						 int selected_time = rn.nextInt(Max_time_decision) + Min_time_decision;
 						 int decision = rn.nextInt(1) + 0;
 						 
 						 m.Lock(selected_ticket, selected_movie);
@@ -97,8 +101,83 @@ public class Movie {
 					 }  
 				  }
 			};
+			
+			Thread t3 = new Thread(){
+				 public void run(){
+					 for(;;){  
+						 int first_dicision = rn.nextInt(1000) + 500;
+						 try{Thread.sleep(first_dicision);}catch(InterruptedException e){System.out.println(e);}    
+						 int selected_movie = rn.nextInt(5) + 1;
+						 int selected_ticket = rn.nextInt(5) + 1;
+						 int selected_time = rn.nextInt(Max_time_decision) + Min_time_decision;
+						 int decision = rn.nextInt(1) + 0;
+						 
+						 m.Lock(selected_ticket, selected_movie);
+						 System.out.println(format.format(new Date()) +" : " + "User_3" +" lock movie" + selected_movie + " nb_ticket : "+ selected_ticket + "     ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie) ); 
+						 try{Thread.sleep(selected_time);}catch(InterruptedException e){System.out.println(e);} 
+						 if (decision == 0) {
+						 		m.UnLock(selected_ticket, selected_movie); 
+						 		System.out.println(format.format(new Date()) +" : "+ "User_3 cancel buy Ticket" + " "+ "            ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 		 
+						 	} else {
+						 		System.out.println(format.format(new Date()) +" : "+ "User_3  buy Ticket"+ " "+ "    ||Movie"+ selected_movie+  " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 	}
+					 }  
+				  }
+			};
+			
+			Thread t4 = new Thread(){
+				 public void run(){
+					 for(;;){  
+						 int first_dicision = rn.nextInt(1000) + 500;
+						 try{Thread.sleep(first_dicision);}catch(InterruptedException e){System.out.println(e);}    
+						 int selected_movie = rn.nextInt(5) + 1;
+						 int selected_ticket = rn.nextInt(5) + 1;
+						 int selected_time = rn.nextInt(Max_time_decision) + Min_time_decision;
+						 int decision = rn.nextInt(1) + 0;
+						 
+						 m.Lock(selected_ticket, selected_movie);
+						 System.out.println(format.format(new Date()) +" : " + "User_4" +" lock movie" + selected_movie + " nb_ticket : "+ selected_ticket + "     ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie) ); 
+						 try{Thread.sleep(selected_time);}catch(InterruptedException e){System.out.println(e);} 
+						 if (decision == 0) {
+						 		m.UnLock(selected_ticket, selected_movie); 
+						 		System.out.println(format.format(new Date()) +" : "+ "User_4 cancel buy Ticket" + " "+ "            ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 		 
+						 	} else {
+						 		System.out.println(format.format(new Date()) +" : "+ "User_4  buy Ticket"+ " "+ "    ||Movie"+ selected_movie+  " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 	}
+					 }  
+				  }
+			};
+			
+			Thread t5 = new Thread(){
+				 public void run(){
+					 for(;;){  
+						 int first_dicision = rn.nextInt(1000) + 500;
+						 try{Thread.sleep(first_dicision);}catch(InterruptedException e){System.out.println(e);}    
+						 int selected_movie = rn.nextInt(5) + 1;
+						 int selected_ticket = rn.nextInt(5) + 1;
+						 int selected_time = rn.nextInt(Max_time_decision) + Min_time_decision;
+						 int decision = rn.nextInt(1) + 0;
+						 
+						 m.Lock(selected_ticket, selected_movie);
+						 System.out.println(format.format(new Date()) +" : " + "User_5" +" lock movie" + selected_movie + " nb_ticket : "+ selected_ticket + "     ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie) ); 
+						 try{Thread.sleep(selected_time);}catch(InterruptedException e){System.out.println(e);} 
+						 if (decision == 0) {
+						 		m.UnLock(selected_ticket, selected_movie); 
+						 		System.out.println(format.format(new Date()) +" : "+ "User_5 cancel buy Ticket" + " "+ "            ||Movie"+ selected_movie+ " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 		 
+						 	} else {
+						 		System.out.println(format.format(new Date()) +" : "+ "User_5  buy Ticket"+ " "+ "    ||Movie"+ selected_movie+  " remain : "+ m.Get_remain(selected_ticket, selected_movie));
+						 	}
+					 }  
+				  }
+			};
 		    t1.start();
 		    t2.start();
+		    t3.start();
+		    t4.start();
+		    t5.start();
 		}
 	
 }
